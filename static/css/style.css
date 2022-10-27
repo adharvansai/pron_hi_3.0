@@ -1,0 +1,172 @@
+/* body{
+  font-family: 'Raleway', sans-serif;
+} */
+
+h1 {
+  color: blue;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.name{
+  font-family: 'Raleway', sans-serif;
+	font-size: 280%;
+	text-align: center;
+	padding-top: 3%;
+  padding-bottom: 3%;
+  color : #5936D9;
+}
+
+.txt_area {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border-radius: 31px;
+    font-family: Ubuntu-Bold;
+    font-size: 18px;
+    color: #8f8fa1;
+    line-height: 1.2;
+}
+
+textarea.txt_area {
+    padding: 19px 35px 0 35px;
+}
+
+textarea{
+  overflow: auto;
+  resize: vertical;
+  touch-action: manipulation;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 1em !important;
+}
+
+textarea:focus, input:focus {
+    border-color: transparent !important;
+}
+
+/* textarea {
+    outline: none;
+    border: none;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Voces&display=swap');
+
+.checkbox-list{
+  border-radius: 31px;
+  padding-left: 3em;
+  padding-top: 1.5em;
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  font-family: 'Voces';
+  background-color: #F2DEDC;
+}
+
+
+
+
+.user_type{
+  border-radius: 31px;
+  padding-left: 3em;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  font-family: 'Voces';
+  background-color: #F2DEDC;
+  width: 30em;
+}
+
+
+
+
+
+/* CSS */
+.button-73 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: #FFC229;
+  box-shadow: #FF6314 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+p.jumbotron-header{
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.phoneme{
+  font-size: 1.1em;
+}
+
+table.table-bordered{
+  border:1px solid #8d8d8d;
+  
+  padding: 5px 5px 5px 5px ;
+}
+table.table-bordered > thead > tr > th{
+  border:1px solid #8d8d8d;
+  padding: 5px 5px 5px 5px ;
+}
+table.table-bordered > tbody > tr > td{
+  border:1px solid #8d8d8d;
+  padding: 5px 5px 5px 5px ;
+}
+
+.phoneme-checkbox{
+  margin-left: 30px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 10px;
+}
+
+.table-div{
+  align-content: center;
+}
+
+.highlight-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.legend{
+  font-size: 1.2em;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}

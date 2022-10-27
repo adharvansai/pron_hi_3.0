@@ -1,0 +1,291 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<script type="text/javascript">
+function chkcontrol(j) {
+j = j-1
+var total=0;
+for(var i=0; i < document.ipa_form.ipa_ckb.length; i++){
+if(document.ipa_form.ipa_ckb[i].checked){
+total =total +1;}
+if(total > 3){
+alert("Please Select only three")
+document.ipa_form.ipa_ckb[j].checked = false ;
+return false;
+}
+}
+} </script>
+<div class="container input_text">
+  <form class="" action="highlighted" name="ipa_form" method="POST">
+    <textarea placeholder="Please type or paste your English text to highlight here" class = "txt_area" name="user_input" rows="8" cols="80" required></textarea><br>
+    <div class="row">
+      <div class = "col-sm-auto">
+    <div class="jumbotron checkbox-list consonants">
+      <div><p class="jumbotron-header">Consonants</p></div>
+    <div class="table-div">
+      <table class="table table-bordered">
+        <!-- <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">- voice</th>
+            <th scope="col">+ voice</th>
+            <th scope="col">nasal</th>
+            <th scope="col">approximates</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="1" id="flexCheckDefault_1" onclick='chkcontrol(1)'>
+                      <label class="form-check-label" for="flexCheckDefault_1">
+                      <b class="phoneme">/ p /</b>  :  <b>p</b>ay
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="2" id="flexCheckDefault_2" onclick='chkcontrol(2)'>
+                      <label class="form-check-label" for="flexCheckDefault_2">
+                      <b class="phoneme">/ b /</b>  :  <b>b</b>e
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="3" id="flexCheckDefault_3" onclick='chkcontrol(3)'>
+                      <label class="form-check-label" for="flexCheckDefault_3">
+                      <b class="phoneme">/ m /</b>  :  <b>m</b>ay
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="4" id="flexCheckDefault_4" onclick='chkcontrol(4)'>
+                      <label class="form-check-label" for="flexCheckDefault_4">
+                      <b class="phoneme">/ w /</b>  :  <b>w</b>e
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="5" id="flexCheckDefault_5" onclick='chkcontrol(5)'>
+                      <label class="form-check-label" for="flexCheckDefault_5">
+                      <b class="phoneme">/ f /</b>  :  <b>f</b>ee
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="6" id="flexCheckDefault_6" onclick='chkcontrol(6)'>
+                      <label class="form-check-label" for="flexCheckDefault_6">
+                      <b class="phoneme">/ v /</b>  :  <b>v</b>ow
+                      </label></div></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="7" id="flexCheckDefault_7" onclick='chkcontrol(7)'>
+                      <label class="form-check-label" for="flexCheckDefault_7">
+                      <b class="phoneme">/ θ /</b>  :  <b>th</b>ank
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="8" id="flexCheckDefault_8" onclick='chkcontrol(8)'>
+                      <label class="form-check-label" for="flexCheckDefault_8">
+                      <b class="phoneme">/ ð /</b>  :  <b>th</b>ey
+                      </label></div></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="9" id="flexCheckDefault_9" onclick='chkcontrol(9)'>
+                      <label class="form-check-label" for="flexCheckDefault_9">
+                      <b class="phoneme">/ t /</b>  :  <b>t</b>oo
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="10" id="flexCheckDefault_10" onclick='chkcontrol(10)'>
+                      <label class="form-check-label" for="flexCheckDefault_10">
+                      <b class="phoneme">/ d /</b>  :  <b>d</b>o
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="11" id="flexCheckDefault_11" onclick='chkcontrol(11)'>
+                      <label class="form-check-label" for="flexCheckDefault_11">
+                      <b class="phoneme">/ n /</b>  :  <b>n</b>o
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="12" id="flexCheckDefault_12" onclick='chkcontrol(12)'>
+                      <label class="form-check-label" for="flexCheckDefault_12">
+                      <b class="phoneme">/ l /</b>  :  <b>l</b>ie
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="13" id="flexCheckDefault_13" onclick='chkcontrol(13)'>
+                      <label class="form-check-label" for="flexCheckDefault_13">
+                      <b class="phoneme">/ s /</b>  :  <b>s</b>ee
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="14" id="flexCheckDefault_14" onclick='chkcontrol(14)'>
+                      <label class="form-check-label" for="flexCheckDefault_14">
+                      <b class="phoneme">/ z /</b>  :  <b>z</b>oo
+                      </label></div></td>
+            <td></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="15" id="flexCheckDefault_15" onclick='chkcontrol(15)'>
+                      <label class="form-check-label" for="flexCheckDefault_15">
+                      <b class="phoneme">/ r /</b>  :  <b>r</b>ay
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="16" id="flexCheckDefault_16" onclick='chkcontrol(16)'>
+                      <label class="form-check-label" for="flexCheckDefault_16">
+                      <b class="phoneme">/ ʃ /</b>  :  <b>sh</b>e
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="17" id="flexCheckDefault_17" onclick='chkcontrol(17)'>
+                      <label class="form-check-label" for="flexCheckDefault_17">
+                      <b class="phoneme">/ ʒ /</b>  :  vi<b>si</b>on
+                      </label></div></td>
+            <td></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="18" id="flexCheckDefault_18" onclick='chkcontrol(18)'>
+                      <label class="form-check-label" for="flexCheckDefault_18">
+                      <b class="phoneme">/ j /</b>  :  <b>y</b>ou
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="19" id="flexCheckDefault_19" onclick='chkcontrol(19)'>
+                      <label class="form-check-label" for="flexCheckDefault_19">
+                      <b class="phoneme">/ ʧ /</b>  :  <b>ch</b>ew
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="20" id="flexCheckDefault_20" onclick='chkcontrol(20)'>
+                      <label class="form-check-label" for="flexCheckDefault_20">
+                      <b class="phoneme">/ ʤ /</b>  :  <b>j</b>aw
+                      </label></div></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="21" id="flexCheckDefault_21" onclick='chkcontrol(21)'>
+                      <label class="form-check-label" for="flexCheckDefault_21">
+                      <b class="phoneme">/ k /</b>  :  <b>k</b>ey
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="22" id="flexCheckDefault_22" onclick='chkcontrol(22)'>
+                      <label class="form-check-label" for="flexCheckDefault_22">
+                      <b class="phoneme">/ g /</b>  :  <b>g</b>o
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="23" id="flexCheckDefault_23" onclick='chkcontrol(23)'>
+                      <label class="form-check-label" for="flexCheckDefault_23">
+                      <b class="phoneme">/ ŋ /</b>  :  si<b>ng</b>
+                      </label></div></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="24" id="flexCheckDefault_24" onclick='chkcontrol(24)'>
+                      <label class="form-check-label" for="flexCheckDefault_24">
+                      <b class="phoneme">/ h /</b>  :  <b>h</b>e
+                      </label></div></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <div class = "col-sm-auto">
+    <div class="jumbotron checkbox-list consonants">
+      <div><p class="jumbotron-header">Vowels</p></div>
+    <div class="table-div">
+      <table class="table table-bordered">
+        <!-- <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">- voice</th>
+            <th scope="col">+ voice</th>
+            <th scope="col">nasal</th>
+            <th scope="col">approximates</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="25" id="flexCheckDefault_25" onclick='chkcontrol(25)'>
+                      <label class="form-check-label" for="flexCheckDefault_25">
+                      <b class="phoneme">/ i / </b> :  <b>ea</b>t
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="26" id="flexCheckDefault_26" onclick='chkcontrol(26)'>
+                      <label class="form-check-label" for="flexCheckDefault_26">
+                      <b class="phoneme">/ ɝ /</b>  :  <b>ear</b>n
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="27" id="flexCheckDefault_27" onclick='chkcontrol(27)'>
+                      <label class="form-check-label" for="flexCheckDefault_27">
+                      <b class="phoneme">/ u /</b>  :  wh<b>o</b>
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="28" id="flexCheckDefault_28" onclick='chkcontrol(28)'>
+                      <label class="form-check-label" for="flexCheckDefault_28">
+                      <b class="phoneme">/ ɪ /</b>  :  <b>i</b>t
+                      </label></div></td>
+            <td></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="29" id="flexCheckDefault_29" onclick='chkcontrol(29)'>
+                      <label class="form-check-label" for="flexCheckDefault_29">
+                      <b class="phoneme">/ ʊ /</b>  :  sh<b>ou</b>ld
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="30" id="flexCheckDefault_30" onclick='chkcontrol(30)'>
+                      <label class="form-check-label" for="flexCheckDefault_30">
+                      <b class="phoneme">/ e /</b>  :  <b>a</b>te
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="31" id="flexCheckDefault_31" onclick='chkcontrol(31)'>
+                      <label class="form-check-label" for="flexCheckDefault_31">
+                      <b class="phoneme">/ ə /</b>  :  <b>u</b>p
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="32" id="flexCheckDefault_32" onclick='chkcontrol(32)'>
+                      <label class="form-check-label" for="flexCheckDefault_32">
+                      <b class="phoneme">/ o /</b>  :  <b>o</b>we
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="33" id="flexCheckDefault_33" onclick='chkcontrol(33)'>
+                      <label class="form-check-label" for="flexCheckDefault_33">
+                      <b class="phoneme">/ ɛ /</b>  :  <b>E</b>d
+                      </label></div></td>
+            <td></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="34" id="flexCheckDefault_34" onclick='chkcontrol(34)'>
+                      <label class="form-check-label" for="flexCheckDefault_34">
+                      <b class="phoneme">/ ɔ /</b>  :  <b>a</b>we
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="35" id="flexCheckDefault_35" onclick='chkcontrol(35)'>
+                      <label class="form-check-label" for="flexCheckDefault_35">
+                      <b class="phoneme">/ æ /</b>  :  <b>a</b>t
+                      </label></div></td>
+            <td></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="36" id="flexCheckDefault_36" onclick='chkcontrol(36)'>
+                      <label class="form-check-label" for="flexCheckDefault_36">
+                      <b class="phoneme">/ ɑ /</b>  :  h<b>o</b>t
+                      </label></div></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="37" id="flexCheckDefault_37" onclick='chkcontrol(37)'>
+                      <label class="form-check-label" for="flexCheckDefault_37">
+                      <b class="phoneme">/ a<sup>ɪ</sup> /</b>  :  <b>I</b>
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="38" id="flexCheckDefault_38" onclick='chkcontrol(38)'>
+                      <label class="form-check-label" for="flexCheckDefault_38">
+                      <b class="phoneme">/ a<sup>ʊ</sup> /</b>  :  <b>ou</b>t
+                      </label></div></td>
+            <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="39" id="flexCheckDefault_39" onclick='chkcontrol(39)'>
+                      <label class="form-check-label" for="flexCheckDefault_39">
+                      <b class="phoneme">/ ɔ<sup>ɪ</sup> /</b>  :  b<b>oy</b>
+                      </label></div></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+
+  </div>
+    
+    <div class="container jumbotron user_type">
+    <p> I am using this tool to</p>
+    <input type="radio" id="learner" name="user" value="learner" required>
+      <label for="learner">improve my English pronunciation</label><br>
+      <input type="radio" id="teacher" name="user" value="teacher" required>
+      <label for="teacher">teach English or phonetics</label><br>
+      <input type="radio" id="student" name="user" value="student" required>
+      <label for="student">study phonetics</label>
+    </div>
+  <div class="container">
+    <div class="highlight-button">
+      <input class="button-73" type="submit" name="highlight" value="Highlight">
+    </div>
+  </div>
+  </form>
+
+{% endblock %}
