@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
-from matplotlib.pyplot import legend
+from matplotlib.pyplot import get, legend
 from highlightHelper.configDict import IPA_DICT,COLORS
 from highlightHelper.highlighter import highlight_text
+from syllableHelper.syllables import SYLLABLES
+from syllableHelper.syllabify import get_syllables
 
 
 
@@ -43,6 +45,26 @@ def highlighter():
         final_text +=  "<br/><br/><p class='legend'>"+ legend_text + "<p>"
 
         return render_template('highlighted.html', text = final_text, original_text = text_input )#request.args['user_input'])
+
+@app.route('/syllabifier')
+@app.route('/s')
+def syllabifier():
+    return render_template('syllabifier.html')
+
+@app.route('/syllabified', methods=['GET', 'POST'])
+def syllabified():
+    if(request.method == "POST"):
+        
+        word = request.form.get('user_input')
+        word = word.split(" ")[0]
+        divided_syllables = get_syllables(word)
+        html_syllables = divided_syllables.replace("|"," <span>&#8858;</span> ")
+
+        return render_template('syllabified.html', syllables = html_syllables)
+
+
+
+
 
 if __name__=='__main__':
     app.run(host="0.0.0.0",port=5000)

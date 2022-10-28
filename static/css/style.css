@@ -162,7 +162,7 @@ table.table-bordered > tbody > tr > td{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  height: 100px;
 }
 
 .legend{
@@ -170,3 +170,85 @@ table.table-bordered > tbody > tr > td{
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
+
+
+.button-75 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 25em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #295691;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-75:hover {
+  background-color: #1093fd;
+  box-shadow: #4a06e9 0 -6px 8px inset;
+  transform: scale(1.125);
+  color: #fdfdfd;
+}
+
+.button-75:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 550px) {
+  .button-75 {
+    font-size: 0.9rem;
+    padding: .75rem 2rem;
+  }
+}
+
+.syllable{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 30px;
+  font-family: Ubuntu-Bold;
+  color: #343453;
+  line-height: 1.2;
+}
+
+.word_input {
+  position: relative;
+  display: block;
+  width: 40%;
+  background: #fff;
+  border-radius: 31px;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 1em !important;
+  color: #11113f;
+  line-height: 3;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  touch-action: manipulation;
+}
+
+
+.word_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+
