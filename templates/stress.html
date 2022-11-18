@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container name">Stresser  <sup style="font-size: 50% !important;">beta</sup></div>
+<div class = "container">
+    <div class = "syllable">
+        <p></p>
+    </div>
+<div class="container">
+<form class="" action="stressed" name="syllable_form" method="POST">
+    <div class="container">
+        <div class="word_container">
+            <input type="text" placeholder="Word to identify Stress!" class = "word_input" name="user_input" rows="1" cols="40" required><br>
+            </div>    
+            </div>
+
+
+            <div class="container">
+            <div class="highlight-button">
+              <input class="button-75" type="submit" name="stress" value="Get Stress">
+            </div>
+          </div>
+</form>
+</div>
+<input type="hidden" id="source" name="source" value="Stresser">
+{% endblock %}
