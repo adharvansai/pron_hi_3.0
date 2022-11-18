@@ -569,3 +569,13 @@ table.table-bordered > tbody > tr > td{
 .monica{
   color: #fc6363;
 }
+
+.omaps{
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  font-size: 25px;
+  font-family: Ubuntu-Bold, sans-serif;
+  color: #343453;
+  line-height: 1.2;
+}

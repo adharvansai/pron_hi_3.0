@@ -5,8 +5,9 @@ rules = getRulesDict()
 
 def getMapping(word):
     conv = cmu_lib[word.upper()]
+    #print(conv)
     sylls = get_syllables(word).split("|")
-    # print(sylls)
+    #print(sylls)
     excl_list = ['ˈ',',','`']
     orth = []
     for a in conv:
@@ -14,7 +15,7 @@ def getMapping(word):
         ref = []
         for i in sylls:
             if i:
-                ref.append(i)
+                ref.append(i.lower())
         sylls = ref
         if a not in excl_list:
             key = a
@@ -59,6 +60,8 @@ def getmap(word):
     mapp = getMapping(word)
     res = []
     for let,phn in mapp:
-        rep = let + "  ->  " + phn
+        rep = let + " &ensp; --- &ensp; " + phn
         res.append(rep)
     return res
+
+#print(getMapping("independence"))

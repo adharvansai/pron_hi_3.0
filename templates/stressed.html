@@ -6,11 +6,7 @@
     <div class = "syllable">
         <div class="row">
         <p>{{syllables|safe}}<br>{{ipa|safe}}<br></p><br><br><br>
-        </div>  
-        <!-- <div class="row">
-        <div class = "syllable_ipa">
-            <p>{{ipa|safe}}</p>
-        </div> -->
+        </div>
     </div>
     </div>
     
@@ -41,3 +37,6 @@
 <input type="hidden" id="source" name="source" value="Stresser">
 
 {% endblock %}
+{% block fbreport %}
+{% include "snippets/fbReport.html" %}
+    {% endblock %}

@@ -39,7 +39,6 @@ def logAnalytics(analytics, information):
 
 @app.route('/')
 def home():
-    print(1)
     return render_template('index.html')
 
 @app.route('/highlighted', methods=['GET', 'POST'])
@@ -79,13 +78,11 @@ def highlighter():
 
         return render_template('highlighted.html', text = final_text, original_text = text_input )#request.args['user_input'])
 
-@app.route('/syllabifier')
 @app.route('/s')
-def syllabifier():
-    return render_template('syllabifier.html')
-
+@app.route('/syllabifier')
 @app.route('/syllabified', methods=['GET', 'POST'])
 def syllabified():
+    html_syllables = ""
     if(request.method == "POST"):
 
         word = request.form.get('user_input')
@@ -93,15 +90,15 @@ def syllabified():
         divided_syllables = get_syllables(word)
         html_syllables = divided_syllables.replace("|"," <span>&#8226;</span> ")
 
-        return render_template('syllabified.html', syllables = html_syllables)
+    return render_template('syllabified.html', syllables = html_syllables)
+
 
 @app.route('/stress')
 @app.route('/ss')
-def stress():
-    return render_template('stress.html')
-
 @app.route('/stressed', methods=['GET', 'POST'])
 def stressed():
+    html_syllables  = ""
+    ipa_conv = ""
     if(request.method == "POST"):
 
         word = request.form.get('user_input')
@@ -127,7 +124,7 @@ def stressed():
         html_syllables = "<br>".join(html_syllables)
         ipa_conv = phen.convert(word).strip()
 
-        return render_template('stressed.html', syllables = html_syllables, ipa = ipa_conv)
+    return render_template('stressed.html', syllables = html_syllables, ipa = ipa_conv)
 
 @app.route('/report', methods=['GET', 'POST'])
 def report():
@@ -162,13 +159,14 @@ def omapRules():
     curr_rules = getRules()
     return render_template('omap_rules.html', rules_text = curr_rules)
 
+@app.route('/o')
 @app.route('/omap', methods=['GET', 'POST'])
 def omap():
     mapp = ""
     if request.method == 'POST':
         word = request.form.get('word_input')
         mapping = getmap(word)
-        mapp = "&emsp;&emsp;".join(mapping)
+        mapp = "<br>".join(mapping)
     return render_template('omapping.html', map = mapp)
     
 

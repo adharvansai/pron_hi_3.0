@@ -3,14 +3,6 @@
 {% block content %}
 
 <div class="container name">Orthographic Mapper  <sup style="font-size: 50% !important;">beta</sup></div>
-<div class = "container">
-    <div class = "syllable">
-        <div class="row">
-        <p>{{map|safe}}</p><br><br><br>
-        </div>  
-        
-    </div>
-    </div>
     
 <div class="container">
 <form class="" action="omap" name="omap_form" method="POST">
@@ -36,6 +28,13 @@
           </div>
 </form>
 </div>
+<div class = "container ">
+    <div class = "omaps">
+        <p>{{map|safe}}</p><br><br><br>
+
+
+    </div>
+    </div>
 <input type="hidden" id="source" name="source" value="Mapper">
 
 {% endblock %}

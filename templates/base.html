@@ -59,50 +59,12 @@
           </div>
         </div>
       </nav>
-    </div>
-    </nav>
 
     <div class="content">
         {% block content %} {% endblock %}
     </div>
 
-
-    <div class="container feedback-report">
-        <div class="row">
-        <div class = "col-sm-auto">
-        <div class="wrap-contact100">
-          <div class="container fb_title">Contact Us</div>
-          <form class="fb_form">
-            <input type="text" placeholder="Name" class = "fb_input" name="fb_name" id= "fb_name" rows="1" cols="40" required><br>
-            <input type="email" placeholder="Email" class = "fb_input" name="fb_email" id="fb_email" rows="1" cols="40" required><br>
-            <textarea maxlength="1500" placeholder="Any Feedback, Suggestions, Questions or General Issues regarding the tool" class = "txt_area" name="fb_msg" id="fb_msg" rows="8" cols="40" required></textarea><br>
-            <div class="container">
-              <div class="highlight-button">
-                <input class="button-fb" type="submit" name="fb" value="Send Message">
-              </div>
-            </div>
-          </form>
-          <div class="fb_ack"><p  id ="fb_ack">&ensp;</p></div>
-        </div>
-        </div>
-        
-        <div class = "col-sm-auto">
-          <div class="wrap-contact100">
-            <div class="container rp_title">Report Word-Specific Issue</div>
-            <form class = "rp_form">
-              <input type="text" placeholder="Word with Issue" class = "rp_input" name="rp_name" id="rp_name" rows="1" cols="40" required><br>
-              <textarea  maxlength="1500" class = "txt_area" name="rp_msg" id="rp_msg" rows="12" cols="40" placeholder="(Optional) Description of the issue Ex: Word missing, incorrect representation, unexpected result etc. Please include the expectation if known. &#10&#10For issues concerning the tool in general use the Contact Us form" required></textarea><br>
-              <div class="container">
-                <div class="highlight-button">
-                  <button class="button-rp" type="submit">Report Issue</button>
-                </div>
-              </div>
-            </form>
-            <p class="rp_ack" id ="rp_ack">&ensp;</p>
-          </div>
-          </div>
-        </div>
-      </div>
+    {% block fbreport %} {% endblock %}
       <footer class="footer-04">
         <div class="container">
           <div class="footer-content col-md">

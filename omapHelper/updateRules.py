@@ -1,10 +1,10 @@
 def updateRulesFile(updatedRules):
-    f = open("rules.txt", "w+")
+    f = open("omapHelper/rules.txt", "w+")
     f.write(updatedRules)
     f.close()
     
 def getRules():
-    f = open("rules.txt", "r+")
+    f = open("omapHelper/rules.txt", "r+")
     rules = f.read()
     return rules
 
