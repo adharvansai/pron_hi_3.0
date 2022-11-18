@@ -13,8 +13,20 @@ from collections import defaultdict
 def highlight_text(text,targets):
     target_dict = defaultdict(list)
     split_converted_text = []
+    missing = []
     for txt in text:
-        split_converted_text.append(phen.convert(txt))
+        phon_rep = phen.convert(txt)
+        if '*' in phon_rep:
+            missing.append(txt)
+        else:
+            split_converted_text.append(phon_rep)
+            
+
+    # Writing in file to keep tack of missing words in dict
+    f = open("analytics/Missing Words", "a+")
+    for word in missing:
+        f.writelines(word + '\n')
+    f.close()
 
     for t in targets:
         for ind, word in enumerate(split_converted_text):

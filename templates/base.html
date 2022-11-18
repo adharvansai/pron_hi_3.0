@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -18,19 +19,99 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+        <script src="/static/js/main.js"></script>
     <header>
 </header>
 
 
 </head>
 <body>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- necessary script to execute jQuery code -->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"
+></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container-fluid">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button> -->
+    <nav class="navbar navbar-expand-sm navbar-light" id="neubar">
+        <div class="container">
+       
+          <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav m-auto ">
+              <li class="nav-item mx-5">
+                <a class="nav-link" aria-current="page" href="/syllabifier">Syllabifier</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link mx-5" href="/">Pronunciation Highlighter</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link" href="/stress">Stresser</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    </nav>
+
     <div class="content">
         {% block content %} {% endblock %}
     </div>
+
+
+    <div class="container feedback-report">
+        <div class="row">
+        <div class = "col-sm-auto">
+        <div class="wrap-contact100">
+          <div class="container fb_title">Contact Us</div>
+          <form class="fb_form">
+            <input type="text" placeholder="Name" class = "fb_input" name="fb_name" id= "fb_name" rows="1" cols="40" required><br>
+            <input type="email" placeholder="Email" class = "fb_input" name="fb_email" id="fb_email" rows="1" cols="40" required><br>
+            <textarea maxlength="1500" placeholder="Any Feedback, Suggestions, Questions or General Issues regarding the tool" class = "txt_area" name="fb_msg" id="fb_msg" rows="8" cols="40" required></textarea><br>
+            <div class="container">
+              <div class="highlight-button">
+                <input class="button-fb" type="submit" name="fb" value="Send Message">
+              </div>
+            </div>
+          </form>
+          <div class="fb_ack"><p  id ="fb_ack">&ensp;</p></div>
+        </div>
+        </div>
+        
+        <div class = "col-sm-auto">
+          <div class="wrap-contact100">
+            <div class="container rp_title">Report Word-Specific Issue</div>
+            <form class = "rp_form">
+              <input type="text" placeholder="Word with Issue" class = "rp_input" name="rp_name" id="rp_name" rows="1" cols="40" required><br>
+              <textarea  maxlength="1500" class = "txt_area" name="rp_msg" id="rp_msg" rows="12" cols="40" placeholder="(Optional) Description of the issue Ex: Word missing, incorrect representation, unexpected result etc. Please include the expectation if known. &#10&#10For issues concerning the tool in general use the Contact Us form" required></textarea><br>
+              <div class="container">
+                <div class="highlight-button">
+                  <button class="button-rp" type="submit">Report Issue</button>
+                </div>
+              </div>
+            </form>
+            <p class="rp_ack" id ="rp_ack">&ensp;</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer-04">
+        <div class="container">
+          <div class="footer-content col-md">
+						<h2 class="footer-heading">About the Developers</h2>
+						<p>Developed through the generosity of the Galloway Foundation and Texas A&M University's Center for Teaching Excellence - English Language Proficiency program, by <a href="https://www.linkedin.com/in/adharvansai/">Adharvan Sai Jakkula</a> under the guidance of <span style="color: rgb(199, 153, 242);">Dr. Brandon Cooper and Ginessa Payne</span>, with the assistance of Eli Quezada.<br>
+              The idea and the original Pronunciation Highlighter was developed by <span class="monica">Dr. Monica (Richards) Ghosh</span></p>
+              <p><br><br>Last updated on November 2, 2022.</p>
+					</div>
+        </div>
+      </footer>
 </body>
 </html>

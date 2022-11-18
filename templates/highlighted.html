@@ -10,7 +10,7 @@ var total=0;
 for(var i=0; i < document.ipa_form.ipa_ckb.length; i++){
 if(document.ipa_form.ipa_ckb[i].checked){
 total =total +1;}
-if(total > 3){
+if(total > 4){
 alert("Please Select only three")
 document.ipa_form.ipa_ckb[j].checked = false ;
 return false;
@@ -18,11 +18,10 @@ return false;
 }
 } </script>
 
-<div class="container jumbotron">
-  <p>{{text|safe}}</p>
+<div class="container jumbotron highlighted">
+  <p class="highlighted-text">{{text|safe}}</p>
 </div>
 <div class="container input_text">
-
   <form class="" action="highlighted" name="ipa_form" method="POST">
     <textarea class = "txt_area" name="user_input" rows="8" cols="80" required>{{original_text}}</textarea><br>
     <div class="row">
@@ -220,7 +219,7 @@ return false;
                       </label></div></td>
             <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="31" id="flexCheckDefault_31" onclick='chkcontrol(31)'>
                       <label class="form-check-label" for="flexCheckDefault_31">
-                      <b class="phoneme">/ ə /</b>  :  <b>u</b>p
+                        <b class="phoneme">/ ʌ , ə /</b>  :  <b>u</b>p
                       </label></div></td>
             <td><div class="phoneme-checkbox"><input class="form-check-input" name = "ipa_ckb" type="checkbox" value="32" id="flexCheckDefault_32" onclick='chkcontrol(32)'>
                       <label class="form-check-label" for="flexCheckDefault_32">
@@ -268,20 +267,20 @@ return false;
                       <b class="phoneme">/ ɔ<sup>ɪ</sup> /</b>  :  b<b>oy</b>
                       </label></div></td>
             </tr>
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
+      </div>
     </div>
+  
+  
     </div>
-  </div>
-
-
-  </div>
     
-  <div class="container">
-    <div class="highlight-button">
-      <input class="button-73" type="submit" name="highlight" value="Highlight">
+    <div class="container">
+      <div class="highlight-button">
+        <input class="button-73" type="submit" name="highlight" value="Highlight">
+      </div>
     </div>
-  </div>
-  </form>
-
+    </form>
+  <input type="hidden" id="source" name="source" value="Highlighter">
 {% endblock %}
